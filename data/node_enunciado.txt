@@ -1,0 +1,6 @@
+Has creado una agencia de viajes.
+Se llama como tu nombre + "travels". Por ejemplo, "Anna's Travels".
+
+A partir del json que se incluye construye un sitio web en el que cada ruta (url) 
+le corresponda un viaje.
+

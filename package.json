@@ -1,0 +1,31 @@
+{
+  "name": "express_travels",
+  "version": "0.0.1",
+  "description": "Agencia de viajes con Express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/classesdeferran/express_travels.git"
+  },
+  "keywords": [
+    "Node",
+    "Express"
+  ],
+  "author": "Ferran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/classesdeferran/express_travels/issues"
+  },
+  "homepage": "https://github.com/classesdeferran/express_travels#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0"
+  }
+}
