@@ -1,5 +1,6 @@
 // Importar los módulos
-const path = require('path');
+const path = require('node:path');
+const fs = require('node:fs');
 const express = require('express');
 const app = express();
 
@@ -38,13 +39,18 @@ datos.forEach(destino => {
 })
 
 app.get('/admin', (req, res) => {
-    res.sendFile('admin.html', { root: path.join(__dirname, '../public') })
+    // res.sendFile('admin.html', { root: path.join(__dirname, '../public') })
+    res.render('admin', {datos});
+
 })
 
 app.post('/insert', (req, res) => {
     const destino = req.body
     datos.push(destino)
-    
+    fs.writeFileSync( path.join( __dirname, '../data/travels.json'), JSON.stringify(datos), (err, data) => { 
+        if (err) throw err
+        console.log(data)
+        });
 })
 
 app.listen(PORT, () => { console.log(`Servidor en http://localhost:${PORT}`) });

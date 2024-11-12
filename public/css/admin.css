@@ -56,3 +56,26 @@ body {
 
     }
  }
+
+ table {
+    margin: 2rem 0;
+    width : 100%;
+
+    tr {
+        height: 2rem;
+
+        &:nth-child(even) {
+            background-color: rgb(106, 90, 205, .3);
+        }
+    }
+
+  
+
+    th {
+        font-weight: 800;
+    }
+
+    td {
+        text-align: center;
+    }
+ }

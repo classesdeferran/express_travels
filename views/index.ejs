@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Express Travels</title>
-    <link rel="stylesheet" href="/css/estilos.css" />
-    <link rel="shortcut icon" href="/img/airplane.svg" type="image/x-icon">
-  </head>
+<%- include("template/head", {title : "Express Travels 2024", css : "estilos"}) %>
   <body>
     <header>
       <h1>Express Travels</h1>
@@ -17,9 +9,7 @@
            <% destinos.forEach(destino => { %>
              <li><a href="<%= destino.ruta %>"><%= destino.lugar %></a></li>
            <%  }); %>  
-         
-
-        </ul>
+          </ul>
       </nav>
     </header>
     <main>
