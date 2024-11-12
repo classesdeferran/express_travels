@@ -8,7 +8,7 @@ const morgan = require('morgan');
 // Recuperar el valor del puerto de conexión
 process.loadEnvFile()
 const PORT = process.env.PORT;
-console.log(PORT)
+// console.log(PORT)
 
 // Cargar los datos
 const datos = require('../data/travels.json');
@@ -24,6 +24,7 @@ app.set('views', './views');
 
 // Middlewares
 app.use(morgan('dev'))
+app.use(express.urlencoded({ extended: true }))
 
 // Indicar la carpeta con recursos estáticos
 app.use(express.static(path.join(__dirname, '../public')));
@@ -34,6 +35,16 @@ datos.forEach(destino => {
     app.get(`${destino.ruta}`, (req, res) => {
         res.render("index", { h2: `${destino.nombre}`, img: `${destino.img}`, descripcion: `${destino.descripcion}`, precio: `${destino.precio}`, destinos: datos })
     })
+})
+
+app.get('/admin', (req, res) => {
+    res.sendFile('admin.html', { root: path.join(__dirname, '../public') })
+})
+
+app.post('/insert', (req, res) => {
+    const destino = req.body
+    datos.push(destino)
+    
 })
 
 app.listen(PORT, () => { console.log(`Servidor en http://localhost:${PORT}`) });
