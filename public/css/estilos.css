@@ -25,14 +25,17 @@ p {
 img {
     width: 100%;
 }
-#menu {
+ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
     background-color: steelblue;
     height: 4rem;
+    list-style: none;
 }
+
+
 a {
     text-decoration: none;
     color: white;

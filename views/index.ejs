@@ -9,18 +9,20 @@
   <body>
     <header>
       <h1>Express Travels</h1>
-      <nav>
-        <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">A</a></li>
-          <li><a href="">B</a></li>
-          <li><a href="">C</a></li>
-          <li><a href="">D</a></li>
-          <li><a href="">E</a></li>
+     
+   
+      <nav >
+        <ul>          
+           <% destinos.forEach(destino => { %>
+             <li><a href="<%= destino.ruta %>"><%= destino.lugar %></a></li>
+           <%  }); %>  
+         
+
         </ul>
       </nav>
     </header>
     <main>
+      <!-- < %= y %> son los delimitadores de la plantilla EJS  -->
       <h2><%= h2 %></h2>
       <p> <%= descripcion %>  </p>
       <p>Precio : <%= precio %></p>

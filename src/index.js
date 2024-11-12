@@ -7,10 +7,16 @@ const morgan = require('morgan');
 
 // Recuperar el valor del puerto de conexión
 process.loadEnvFile()
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
+console.log(PORT)
 
 // Cargar los datos
 const datos = require('../data/travels.json');
+const arrayDestinos = []
+datos.forEach(destino => {
+    arrayDestinos.push(destino.lugar)
+})
+// console.log(arrayDestinos)
 
 // Configuración de la plantilla
 app.set('view engine', 'ejs');
@@ -25,11 +31,10 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // Rutas
 datos.forEach(destino => {
-    // console.log(`${destino.ruta}`)
     app.get(`${destino.ruta}`, (req, res) => {
         // res.send(`Bienvenido a ${destino.nombre}!`);
-        res.render("index", { h2: `${destino.nombre}`, img: `${destino.img}`, descripcion: `${destino.descripcion}`, precio : `${destino.precio}` })
-})
+        res.render("index", { h2: `${destino.nombre}`, img: `${destino.img}`, descripcion: `${destino.descripcion}`, precio: `${destino.precio}`, destinos: datos })
+    })
 })
 
 app.listen(PORT, () => { console.log(`Servidor en http://localhost:${PORT}`) });
