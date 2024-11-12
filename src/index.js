@@ -32,7 +32,6 @@ app.use(express.static(path.join(__dirname, '../public')));
 // Rutas
 datos.forEach(destino => {
     app.get(`${destino.ruta}`, (req, res) => {
-        // res.send(`Bienvenido a ${destino.nombre}!`);
         res.render("index", { h2: `${destino.nombre}`, img: `${destino.img}`, descripcion: `${destino.descripcion}`, precio: `${destino.precio}`, destinos: datos })
     })
 })

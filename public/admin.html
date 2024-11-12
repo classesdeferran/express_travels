@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="shortcut icon" href="img/airplane.svg" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <h1>Express Travels</h1>
+    </header>
+
+    <main>
+        <h2>Formulario para incorporar destinos</h2>
+      <form action="/insert" method="POST">
+        <div>
+          <label for="ruta">Ruta:</label>
+          <input type="text" id="ruta" name="ruta" />
+        </div>
+        <div>
+          <label for="lugar">Lugar:</label>
+          <input type="text" id="lugar" name="lugar" />
+        </div>
+        <div>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" />
+        </div>
+        <div>
+          <label for="descripcion">Descripcion:</label>
+          <input type="text" id="descripcion" name="descripcion" />
+        </div>
+        <div>
+          <label for="precio">Precio:</label>
+          <input type="number" id="precio" name="precio" step="any" />
+        </div>
+        <div>
+          <label for="img">Ruta de la imagen:</label>
+          <input type="text" id="img" name="img" />
+        </div>
+        <div class="form_buttons">
+            <button type="submit">Enviar datos</button>
+            <button type="reset">Borrar datos</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
