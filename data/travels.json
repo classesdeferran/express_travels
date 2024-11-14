@@ -45,12 +45,66 @@
     "id": "0e64bc0c-77b0-499e-9051-22347470b90d"
   },
   {
-    "ruta": "",
-    "lugar": "",
-    "nombre": "",
-    "descripcion": "",
-    "precio": "",
-    "img": "",
-    "id": "b49d779f-fc9e-448d-a501-14595e9c11f4"
+    "0": {
+      "id": "1",
+      "ruta": "/",
+      "lugar": "🏠",
+      "nombre": "¡Viaja por todo el mundo!",
+      "descripcion": "La mejor agencia de viajes de Internet",
+      "precio": "Los mejores precios que puedas encontrar",
+      "img": "https://images.unsplash.com/photo-1498503182468-3b51cbb6cb24?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    "1": {
+      "id": "2",
+      "ruta": "/maldivas",
+      "lugar": "Maldivas",
+      "nombre": "Maldivas soñadas",
+      "descripcion": "8 días de viaje, con resort en plena playa y vuelos incluidos",
+      "precio": 2800.45,
+      "img": "https://images.unsplash.com/photo-1540202404-a2f29016b523?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    "2": {
+      "id": "5",
+      "ruta": "/venecia",
+      "lugar": "Venecia",
+      "nombre": "La bella Venecia",
+      "descripcion": "5 días de viaje, con hotel en el Gran Canal y vuelos incluidos",
+      "precio": 1467.78,
+      "img": "https://images.unsplash.com/photo-1558271736-cd043ef2e855?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    "3": {
+      "id": "7",
+      "ruta": "/alaska",
+      "lugar": "Alaska",
+      "nombre": "Naturaleza salvaje",
+      "descripcion": "15 días por entornos naturales únicos",
+      "precio": "2500.85",
+      "img": "https://images.unsplash.com/photo-1525220964737-6c299398493c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    "4": {
+      "ruta": "/islandia",
+      "lugar": "Islandia",
+      "nombre": "Islandia",
+      "descripcion": "Ruta de los volcanes",
+      "precio": "3000",
+      "img": "",
+      "id": "0e64bc0c-77b0-499e-9051-22347470b90d"
+    },
+    "5": {
+      "ruta": "",
+      "lugar": "",
+      "nombre": "",
+      "descripcion": "",
+      "precio": "",
+      "img": "",
+      "id": "b49d779f-fc9e-448d-a501-14595e9c11f4"
+    },
+    "id": "b49d779f-fc9e-448d-a501-14595e9c11f4",
+    "ruta": "/newzeland",
+    "lugar": "Nueva Zelanda",
+    "nombre": "La ruta de los anillos",
+    "descripcion": "20 días por parajes inolvidables",
+    "precio": "5000",
+    "img": "https://images.unsplash.com/photo-1465056836041-7f43ac27dcb5?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   }
 ]

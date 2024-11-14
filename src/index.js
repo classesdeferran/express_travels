@@ -71,8 +71,17 @@ app.delete("/eliminar/:id", (req, res) => {
 })
 
 app.put("/actualizar/:id", (req, res) => {
-    console.log(req.params.id);
-    console.log(req.body);
+    const id = req.params.id;
+    // console.log(req.body);
+    const indexDestino = datos.findIndex(destino => destino.id === id)
+    if (indexDestino !== -1) {
+        datos[indexDestino] = { ...datos, ...req.body} // Actualiza los datos
+        fs.writeFileSync( path.join( __dirname, '../data/travels.json'), JSON.stringify(datos, null, 2), (err) => { 
+            if (err) res.json({"mensaje": "Problema con la actualización"})
+            });
+            res.json({"mensaje": "Elemento actualizado correctamente"})
+    }
+    res.json({"mensaje": "Elemento no encontrado"})
 })
 
 app.listen(PORT, () => { console.log(`Servidor en http://localhost:${PORT}`) });
