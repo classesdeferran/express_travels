@@ -19,8 +19,15 @@ body {
 
  header, main {
     margin: 2rem auto;
-    width: 50%;
+    width: 90%;
 
+ }
+
+ main {
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
  }
 
  form {

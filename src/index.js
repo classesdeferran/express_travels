@@ -1,6 +1,7 @@
 // Importar los módulos
 const path = require('node:path');
 const fs = require('node:fs');
+const crypto = require('node:crypto')
 const express = require('express');
 const app = express();
 
@@ -46,11 +47,24 @@ app.get('/admin', (req, res) => {
 
 app.post('/insert', (req, res) => {
     const destino = req.body
+    // destino.id = Date.now().toLocaleString()
+    destino.id = crypto.randomUUID()
     datos.push(destino)
-    fs.writeFileSync( path.join( __dirname, '../data/travels.json'), JSON.stringify(datos), (err, data) => { 
-        if (err) throw err
-        console.log(data)
+    fs.writeFileSync( path.join( __dirname, '../data/travels.json'), JSON.stringify(datos, null, 2), (err, data) => { 
+        if (err) console.log(err)
         });
+    res.redirect("/admin")
+})
+
+app.delete("/eliminar/:id", (req, res) => {
+    const id = req.params.id
+    // console.log("id = ", id);
+    let newData = datos.filter(destino => destino.id !== id )
+    // console.log(newData);
+    fs.writeFileSync( path.join( __dirname, '../data/travels.json'), JSON.stringify(newData, null, 2), (err) => { 
+        if (err) res.json({"mensaje": "Problema con el borrado"})
+        });
+        res.json({"mensaje": "Elemento borrado correctamente"})
 })
 
 app.listen(PORT, () => { console.log(`Servidor en http://localhost:${PORT}`) });
