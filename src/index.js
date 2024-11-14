@@ -2,6 +2,7 @@
 const path = require('node:path');
 const fs = require('node:fs');
 const crypto = require('node:crypto')
+const methodOverride = require('method-override') // Para el PUT
 const express = require('express');
 const app = express();
 
@@ -27,6 +28,8 @@ app.set('views', './views');
 // Middlewares
 app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+app.use(methodOverride('_method')) // Para poder utilizar el método PUT
 
 // Indicar la carpeta con recursos estáticos
 app.use(express.static(path.join(__dirname, '../public')));
@@ -65,6 +68,11 @@ app.delete("/eliminar/:id", (req, res) => {
         if (err) res.json({"mensaje": "Problema con el borrado"})
         });
         res.json({"mensaje": "Elemento borrado correctamente"})
+})
+
+app.put("/actualizar/:id", (req, res) => {
+    console.log(req.params.id);
+    console.log(req.body);
 })
 
 app.listen(PORT, () => { console.log(`Servidor en http://localhost:${PORT}`) });

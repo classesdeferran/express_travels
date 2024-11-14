@@ -23,7 +23,8 @@
   "homepage": "https://github.com/classesdeferran/express_travels#readme",
   "dependencies": {
     "ejs": "^3.1.10",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "method-override": "^3.0.0"
   },
   "devDependencies": {
     "morgan": "^1.10.0"
